@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Layer Poultry Story — Commercial Flock Lifecycle & Egg Market Intelligence</title>
+<title>Layer Poultry Story: Closed vs Open House, 60 Weeks of Production</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
 :root {
@@ -163,6 +163,7 @@ button:focus-visible { outline: 2px solid var(--brand); outline-offset: 2px; }
   display: flex;
   align-items: center;
   gap: 4px;
+  cursor: pointer;
 }
 .th-btn:hover { border-color: var(--brand); }
 
@@ -184,6 +185,7 @@ nav button {
   color: var(--t2);
   white-space: nowrap;
   transition: all 0.15s ease;
+  cursor: pointer;
 }
 nav button:hover { border-color: var(--egg-brown); color: var(--egg-brown); }
 nav button[aria-selected="true"] {
@@ -233,6 +235,7 @@ nav button[aria-selected="true"] {
   font-weight: 500;
   color: var(--t2);
   transition: all 0.1s;
+  cursor: pointer;
 }
 .fl button:hover { background: var(--line); color: var(--t1); }
 .fl button[data-act="1"] {
@@ -265,6 +268,7 @@ nav button[aria-selected="true"] {
   border-radius: 6px;
   padding: 3px 9px;
   white-space: nowrap;
+  cursor: pointer;
 }
 .fl-reset:hover { opacity: 0.85; }
 
@@ -529,38 +533,38 @@ footer a:hover {
       </div>
       <div class="hc">
         <button class="th-btn" id="lang-btn" onclick="toggleLanguage()">
-          <span id="lang-flag">EN</span>
-          <span id="lang-label">English</span>
+          <span id="lang-flag">ID</span>
+          <span id="lang-label">Bahasa</span>
         </button>
         <button class="th-btn" id="theme-btn" onclick="toggleTheme()">
-          <span id="theme-icon">Mode</span>
+          <span id="theme-icon">Dark Mode</span>
         </button>
       </div>
     </div>
 
     <!-- ROW 2: TABS -->
     <nav role="tablist">
-      <button role="tab" id="tab-0" aria-selected="true" onclick="switchTab(0)">Ringkasan Eksekutif</button>
-      <button role="tab" id="tab-1" aria-selected="false" onclick="switchTab(1)">Kurva HDP &amp; Persistensi</button>
-      <button role="tab" id="tab-2" aria-selected="false" onclick="switchTab(2)">Mikroklimat &amp; Kualitas Kerabang</button>
-      <button role="tab" id="tab-3" aria-selected="false" onclick="switchTab(3)">Finansial &amp; BEP</button>
+      <button role="tab" id="tab-0" aria-selected="true" onclick="switchTab(0)">Executive Summary</button>
+      <button role="tab" id="tab-1" aria-selected="false" onclick="switchTab(1)">HDP Curve &amp; Persistency</button>
+      <button role="tab" id="tab-2" aria-selected="false" onclick="switchTab(2)">Microclimate &amp; Shell Quality</button>
+      <button role="tab" id="tab-3" aria-selected="false" onclick="switchTab(3)">Financials &amp; Break-Even</button>
     </nav>
 
     <!-- ROW 3: FROZEN FILTER BAR -->
     <div class="filter-bar">
       <div class="fl-wrap">
         <div class="fl-box">
-          <span class="fl-lbl" data-i18n="filter_housing">Kandang</span>
+          <span class="fl-lbl" data-i18n="filter_housing">Housing</span>
           <div class="fl" id="fl-housing">
-            <button data-act="1" onclick="setFilter('housing', 'ALL')">Semua</button>
+            <button data-act="1" onclick="setFilter('housing', 'ALL')" class="fl-all-btn">All</button>
             <button data-act="0" onclick="setFilter('housing', 'Closed House')">Closed House</button>
             <button data-act="0" onclick="setFilter('housing', 'Open House')">Open House</button>
           </div>
         </div>
         <div class="fl-box">
-          <span class="fl-lbl" data-i18n="filter_region">Klaster</span>
+          <span class="fl-lbl" data-i18n="filter_region">Cluster</span>
           <div class="fl" id="fl-region">
-            <button data-act="1" onclick="setFilter('region', 'ALL')">Semua</button>
+            <button data-act="1" onclick="setFilter('region', 'ALL')" class="fl-all-btn">All</button>
             <button data-act="0" onclick="setFilter('region', 'Blitar Central Cluster')">Blitar</button>
             <button data-act="0" onclick="setFilter('region', 'Kendal Modern Farm')">Kendal</button>
             <button data-act="0" onclick="setFilter('region', 'Payakumbuh Highland Unit')">Payakumbuh</button>
@@ -569,14 +573,14 @@ footer a:hover {
         <div class="fl-box">
           <span class="fl-lbl" data-i18n="filter_strain">Strain</span>
           <div class="fl" id="fl-strain">
-            <button data-act="1" onclick="setFilter('strain', 'ALL')">Semua</button>
+            <button data-act="1" onclick="setFilter('strain', 'ALL')" class="fl-all-btn">All</button>
             <button data-act="0" onclick="setFilter('strain', 'Lohmann Brown-Classic')">Lohmann</button>
             <button data-act="0" onclick="setFilter('strain', 'Hy-Line Brown')">Hy-Line</button>
             <button data-act="0" onclick="setFilter('strain', 'ISA Brown')">ISA</button>
           </div>
         </div>
         <div class="fl-meta">
-          <span class="fl-badge" id="filter-status">8 Flok | 3.360 Log Harian</span>
+          <span class="fl-badge" id="filter-status">8 Flocks | 199,410 Housed Pullets | 3,360 Daily Logs</span>
           <button class="fl-reset" onclick="resetFilters()" data-i18n="filter_reset">Reset</button>
         </div>
       </div>
@@ -586,52 +590,52 @@ footer a:hover {
 
 <main class="w-content">
 
-  <!-- TAB 0: RINGKASAN EKSEKUTIF -->
+  <!-- TAB 0: EXECUTIVE SUMMARY -->
   <div class="tab-pane active" id="pane-0">
     <div class="bento">
-      <div class="c c-egg-accent" data-tip="Closed 96,6% vs Open 90,1%. Acuan breed Brown: 93–96% pada umur 26–32 minggu.">
-        <div class="c-sub" data-i18n="kpi1_title">Peak HDP (harian)</div>
-        <div class="c-val" style="color:var(--brand);"><span id="kpi-peak-hdp">93,4%</span></div>
-        <div class="c-desc" data-i18n="kpi1_desc">Closed 96,6% vs Open 90,1%. Acuan breed Brown: 93–96% pada umur 26–32 minggu.</div>
+      <div class="c c-egg-accent" data-tip="Closed 96.6% vs Open 90.1%. Brown-class breed guide: 93–96% at 26–32 weeks.">
+        <div class="c-sub" data-i18n="kpi1_title">Peak HDP (daily)</div>
+        <div class="c-val" style="color:var(--brand);"><span id="kpi-peak-hdp">93.4%</span></div>
+        <div class="c-desc" data-i18n="kpi1_desc">Closed 96.6% vs Open 90.1%. Brown-class breed guide: 93–96% at 26–32 weeks.</div>
       </div>
-      <div class="c c-egg-accent" data-tip="Closed 30,2 minggu berturut-turut, Open 0 minggu. Rata-rata mingguan Open tidak pernah menembus 90%.">
-        <div class="c-sub" data-i18n="kpi2_title">Persistensi HDP &gt;90%</div>
-        <div class="c-val" style="color:var(--ok);"><span id="kpi-persistence">15,1 Mgg</span></div>
-        <div class="c-desc" data-i18n="kpi2_desc">Closed 30,2 minggu, Open 0 minggu. Rata-rata mingguan Open tidak pernah menembus 90%.</div>
+      <div class="c c-egg-accent" data-tip="Closed 30.2 consecutive weeks, Open 0 weeks. Open's weekly average never reached 90%.">
+        <div class="c-sub" data-i18n="kpi2_title">HDP &gt;90% Persistency</div>
+        <div class="c-val" style="color:var(--ok);"><span id="kpi-persistence">15.1 Wks</span></div>
+        <div class="c-desc" data-i18n="kpi2_desc">Closed 30.2 weeks, Open 0 weeks. Open's weekly average never reached 90%.</div>
       </div>
-      <div class="c c-egg-accent" data-tip="Closed 2,096 vs Open 2,420 kg pakan per kg massa telur. Kisaran sehat 2,00–2,15.">
-        <div class="c-sub" data-i18n="kpi3_title">FCR Telur Siklus</div>
-        <div class="c-val" style="color:var(--egg-brown);"><span id="kpi-fcr">2,258</span></div>
-        <div class="c-desc" data-i18n="kpi3_desc">Closed 2,096 vs Open 2,420 kg pakan per kg massa telur. Kisaran sehat 2,00–2,15.</div>
+      <div class="c c-egg-accent" data-tip="Closed 2.096 vs Open 2.420 kg feed per kg egg mass. Healthy range 2.00–2.15.">
+        <div class="c-sub" data-i18n="kpi3_title">Cycle Egg FCR</div>
+        <div class="c-val" style="color:var(--egg-brown);"><span id="kpi-fcr">2.258</span></div>
+        <div class="c-desc" data-i18n="kpi3_desc">Closed 2.096 vs Open 2.420 kg feed per kg egg mass. Healthy range 2.00–2.15.</div>
       </div>
-      <div class="c c-egg-accent" data-tip="Closed 1,35% vs Open 6,61% (retak, kerabang tipis, abnormal). Batas kendali &lt; 2%.">
-        <div class="c-sub" data-i18n="kpi4_title">Telur Reject</div>
-        <div class="c-val" style="color:var(--bad);"><span id="kpi-reject">3,98%</span></div>
-        <div class="c-desc" data-i18n="kpi4_desc">Closed 1,35% vs Open 6,61% (retak, kerabang tipis, abnormal). Batas kendali &lt; 2%.</div>
+      <div class="c c-egg-accent" data-tip="Closed 1.35% vs Open 6.61% (cracked, thin-shelled, abnormal). Control limit &lt; 2%.">
+        <div class="c-sub" data-i18n="kpi4_title">Egg Reject Rate</div>
+        <div class="c-val" style="color:var(--bad);"><span id="kpi-reject">3.98%</span></div>
+        <div class="c-desc" data-i18n="kpi4_desc">Closed 1.35% vs Open 6.61% (cracked, thin-shelled, abnormal). Control limit &lt; 2%.</div>
       </div>
     </div>
 
     <!-- 3 STRATEGIC TAKEAWAYS -->
     <div class="tk-grid">
       <div class="tk-card c-blue">
-        <div class="tk-tag" data-i18n="tk1_tag">Temuan 1 · Persistensi &amp; produksi per ekor</div>
-        <div class="tk-title" data-i18n="tk1_title">Closed House menahan HDP di atas 90% selama 30 minggu. Open House tidak pernah mencapainya.</div>
+        <div class="tk-tag" data-i18n="tk1_tag">Finding 1 · Persistency &amp; output per bird</div>
+        <div class="tk-title" data-i18n="tk1_title">Closed houses held HDP above 90% for 30 weeks. Open houses never got there.</div>
         <div class="tk-body" data-i18n="tk1_body">
-          Rata-rata peak HDP Closed 96,6%, bertahan di atas 90% selama 30,2 minggu. Open mentok di 90,1% pada satu hari puncak, lalu bertahan di 82–84% karena suhu harian rata-rata 31°C dan THI 83–85. Hasil akhirnya: 351,5 butir per hen housed di Closed vs 255,3 di Open (−96 butir, −27%), dengan mortalitas Open 26,6% vs 5,9%.
+          Closed flocks averaged a <b>96.6%</b> peak HDP and stayed above 90% for <b>30.2 weeks</b>. Open flocks topped out at <b>90.1%</b> on a single peak day, then hovered at 82–84% under 31°C ambient temperatures and 83–85 THI. The bottom line: <b>351.5 eggs</b> per hen housed in Closed vs <b>255.3</b> in Open (−96 eggs, −27%), with Open mortality at <b>26.6%</b> vs <b>5.9%</b>.
         </div>
       </div>
       <div class="tk-card c-amber">
-        <div class="tk-tag" data-i18n="tk2_tag">Temuan 2 · Konversi pakan (FCR)</div>
-        <div class="tk-title" data-i18n="tk2_title">Selisih FCR 0,32 kg/kg setara ±Rp 2.550 per kg telur.</div>
+        <div class="tk-tag" data-i18n="tk2_tag">Finding 2 · Feed efficiency</div>
+        <div class="tk-title" data-i18n="tk2_title">A 0.324 FCR gap saves IDR 2,550 per kg of eggs (±IDR 1.7 billion per 30k-bird cycle).</div>
         <div class="tk-body" data-i18n="tk2_body">
-          FCR siklus Closed 2,096, Open 2,420. Dengan harga ransum rata-rata Rp 7.890/kg, selisih 0,324 kg pakan per kg telur berarti ±Rp 2.550 per kg telur. Untuk 30.000 hen housed, itu ±Rp 1,7 miliar per siklus. Pakan adalah 60–70% biaya produksi, jadi angka ini langsung menggerus laba.
+          Cumulative FCR ran at <b>2.096</b> in Closed vs <b>2.420</b> in Open (a 0.324 kg feed per kg egg mass gap). At an average feed cost of IDR 7,890/kg, Closed houses saved IDR 2,556 per kg of eggs produced. For a 30,000-bird flock yielding ~675 tons of eggs per cycle, that efficiency preserves <b>IDR 1.72 billion</b> in cash.
         </div>
       </div>
       <div class="tk-card c-green">
-        <div class="tk-tag" data-i18n="tk3_tag">Temuan 3 · Kualitas kerabang</div>
-        <div class="tk-title" data-i18n="tk3_title">Reject turun hampir 80%: dari 6,61% di Open ke 1,35% di Closed.</div>
+        <div class="tk-tag" data-i18n="tk3_tag">Finding 3 · Shell quality</div>
+        <div class="tk-title" data-i18n="tk3_title">Reject rate dropped nearly 80% (1.35% vs 6.61%) with temperature control and mechanical handling.</div>
         <div class="tk-body" data-i18n="tk3_body">
-          Closed berada di bawah batas kendali 2%. Open hampir lima kali lipatnya. Pemicu utamanya THI di atas 78 yang menyebabkan panting dan alkalosis respiratorik, lalu mengganggu pembentukan kerabang. Pengumpulan manual ikut menambah retak, tetapi porsinya tidak bisa dipisahkan dari data ini. Telur reject dijual diskon ke industri roti atau telur cair.
+          In Open houses, daily THI of 82–86 triggered chronic panting that depleted blood bicarbonate ions, causing thin, brittle shells. Combined with manual collection, Open rejects reached <b>6.61%</b> (1.23 million eggs). Closed cut this to <b>1.35%</b> through evaporative pad cooling and cushioned egg conveyors.
         </div>
       </div>
     </div>
@@ -640,19 +644,19 @@ footer a:hover {
     <div class="chart-box">
       <div class="chart-hdr">
         <div>
-          <div class="chart-title" data-i18n="tbl1_title">Closed vs Open House: 7 metrik siklus 60 minggu</div>
-          <div class="chart-sub" id="tbl1-sub">Rata-rata per tipe kandang, mengikuti filter aktif.</div>
+          <div class="chart-title" data-i18n="tbl1_title">Closed vs Open House: 7 metrics over 60 weeks</div>
+          <div class="chart-sub" id="tbl1-sub">Weighted averages per house type, reflecting active filters.</div>
         </div>
       </div>
       <div class="tbl-wrap">
         <table class="data-table">
           <thead>
             <tr>
-              <th data-i18n="th_metric">Parameter Evaluasi</th>
-              <th data-i18n="th_ch">Closed House Terpilih</th>
-              <th data-i18n="th_oh">Open House Terpilih</th>
-              <th data-i18n="th_delta">Selisih Relatif</th>
-              <th data-i18n="th_impact">Dampak Operasional</th>
+              <th data-i18n="th_metric">Evaluation Metric</th>
+              <th data-i18n="th_ch">Filtered Closed House</th>
+              <th data-i18n="th_oh">Filtered Open House</th>
+              <th data-i18n="th_delta">Relative Delta</th>
+              <th data-i18n="th_impact">Operational Impact</th>
             </tr>
           </thead>
           <tbody id="benchmark-tbody">
@@ -663,18 +667,18 @@ footer a:hover {
     </div>
   </div>
 
-  <!-- TAB 1: KURVA HEN-DAY & PERSISTENSI -->
+  <!-- TAB 1: HDP CURVE & PERSISTENCY -->
   <div class="tab-pane" id="pane-1">
     <div class="chart-box">
       <div class="chart-hdr">
         <div>
-          <div class="chart-title" data-i18n="c1_title">Kurva Hen-Day Production (%) dari Minggu 18 hingga Minggu 77</div>
-          <div class="chart-sub" id="c1-sub">Dinamika produksi telur harian terhadap acuan breed Brown-class</div>
+          <div class="chart-title" data-i18n="c1_title">Hen-Day Production (%) Trajectory (Weeks 18–77)</div>
+          <div class="chart-sub" id="c1-sub">Production dynamics benchmarked against Brown-class breed guide</div>
         </div>
         <div class="chart-legend" id="hdp-legend">
-          <div class="lg-item"><div class="lg-dot" style="background:var(--brand);"></div><span id="lg-c-text">Closed House Terfilter</span></div>
-          <div class="lg-item"><div class="lg-dot" style="background:var(--egg-brown);"></div><span id="lg-o-text">Open House Terfilter</span></div>
-          <div class="lg-item"><div class="lg-dot" style="background:var(--mute);"></div><span data-i18n="lg_std">Acuan Breed Brown-class</span></div>
+          <div class="lg-item"><div class="lg-dot" style="background:var(--brand);"></div><span id="lg-c-text">Filtered Closed House</span></div>
+          <div class="lg-item"><div class="lg-dot" style="background:var(--egg-brown);"></div><span id="lg-o-text">Filtered Open House</span></div>
+          <div class="lg-item"><div class="lg-dot" style="background:var(--mute);"></div><span data-i18n="lg_std">Brown-class Breed Guide</span></div>
         </div>
       </div>
       <div class="svg-wrap">
@@ -686,8 +690,8 @@ footer a:hover {
       <div class="chart-box" style="margin-bottom:0;">
         <div class="chart-hdr">
           <div>
-            <div class="chart-title" data-i18n="c2_title">Dinamika Bobot Butir Telur (Gram per Butir)</div>
-            <div class="chart-sub" data-i18n="c2_sub">Kenaikan ukuran telur seiring pertambahan umur flok (57,4 g → 66,3 g)</div>
+            <div class="chart-title" data-i18n="c2_title">Egg Weight Maturation Trajectory (Grams per Egg)</div>
+            <div class="chart-sub" data-i18n="c2_sub">Egg size progression with flock age (57.4g → 66.3g)</div>
           </div>
         </div>
         <div class="svg-wrap">
@@ -697,8 +701,8 @@ footer a:hover {
       <div class="chart-box" style="margin-bottom:0;">
         <div class="chart-hdr">
           <div>
-            <div class="chart-title" data-i18n="c3_title">Dinamika FCR Mingguan (kg Pakan / kg Telur)</div>
-            <div class="chart-sub" data-i18n="c3_sub">Efisiensi konversi pakan dari fase awal bertelur (W22) hingga afkir (W77)</div>
+            <div class="chart-title" data-i18n="c3_title">Weekly Feed Conversion Ratio (kg Feed / kg Egg)</div>
+            <div class="chart-sub" data-i18n="c3_sub">Feed efficiency from lay ramp-up (W22) to cycle end (W77)</div>
           </div>
         </div>
         <div class="svg-wrap">
@@ -708,24 +712,24 @@ footer a:hover {
     </div>
 
     <div class="callout">
-      <b data-i18n="callout1_title">Analisis Fisiologis Persistensi Bertelur:</b><br>
+      <b data-i18n="callout1_title">Physiological Analysis of Laying Persistence:</b><br>
       <span data-i18n="callout1_body">
-        Kedua sistem kandang mencatat kenaikan produksi hingga umur 24–25 minggu. Namun begitu memasuki minggu ke-38 ke atas, stres panas pada Open House memicu penurunan produksi mingguan rata-rata 0,53% poin per minggu (berbanding hanya 0,38% poin per minggu pada Closed House). Fotoperiode otomatis 16 jam terang pada Closed House menjaga stabilitas sekresi LH dan FSH tanpa terpengaruh cuaca mendung.
+        Both housing systems ramp up production toward W24–W25. Beyond W38, heat stress in Open House accelerates post-peak lay drop to 0.53% weekly (Closed held at 0.38% weekly). Closed House automated 16-hour photoperiod preserves consistent LH and FSH release regardless of cloud cover.
       </span>
     </div>
   </div>
 
-  <!-- TAB 2: MIKROKLIMAT IOT & CANGKANG -->
+  <!-- TAB 2: MICROCLIMATE IOT & SHELL QUALITY -->
   <div class="tab-pane" id="pane-2">
     <div class="chart-box">
       <div class="chart-hdr">
         <div>
-          <div class="chart-title" data-i18n="c4_title">Hubungan Temperature-Humidity Index (THI) dengan Reject Rate Telur</div>
-          <div class="chart-sub" data-i18n="c4_sub">Korelasi stres panas lingkungan kandang dengan persentase telur retak dan kerabang tipis</div>
+          <div class="chart-title" data-i18n="c4_title">Temperature-Humidity Index (THI) vs Egg Reject Rate</div>
+          <div class="chart-sub" data-i18n="c4_sub">Correlation between ambient heat stress and eggshell integrity</div>
         </div>
         <div class="chart-legend">
           <div class="lg-item"><div class="lg-dot" style="background:var(--bad);"></div><span data-i18n="lg_rej">Reject Rate (%)</span></div>
-          <div class="lg-item"><div class="lg-dot" style="background:var(--egg-yolk);"></div><span data-i18n="lg_thi">Indeks THI</span></div>
+          <div class="lg-item"><div class="lg-dot" style="background:var(--egg-yolk);"></div><span data-i18n="lg_thi">THI Index</span></div>
         </div>
       </div>
       <div class="svg-wrap">
@@ -735,36 +739,36 @@ footer a:hover {
 
     <div class="tk-grid">
       <div class="tk-card c-amber">
-        <div class="tk-tag" data-i18n="alk_tag">Mekanisme Biologis</div>
-        <div class="tk-title" data-i18n="alk_title">Respiratory Alkalosis &amp; Kegagalan Kalsifikasi</div>
+        <div class="tk-tag" data-i18n="alk_tag">Biological Mechanism</div>
+        <div class="tk-title" data-i18n="alk_title">Respiratory Alkalosis &amp; Calcification Failure</div>
         <div class="tk-body" data-i18n="alk_body">
-          Saat indeks THI melebihi ambang 78,0, ayam melakukan pernapasan cepat (<i>panting</i>) untuk melepas panas. Pengeluaran gas CO₂ darah yang berlebihan menaikkan pH darah (alkalosis), sehingga ion bikarbonat (HCO₃⁻) anjlok drastis. Akibatnya, kelenjar kerabang uterus tidak dapat mengikat kalsium untuk membentuk kristal kalsium karbonat (CaCO₃) kerabang telur, memicu cangkang tipis dan retak.
+          When THI exceeds 78.0, hens pant rapidly to shed metabolic heat. Excessive blood CO₂ exhalation raises blood pH into alkalosis, depleting bicarbonate ions (HCO₃⁻). The uterine shell gland cannot bind calcium to precipitate calcium carbonate (CaCO₃) crystals, causing thin and cracked shells.
         </div>
       </div>
       <div class="tk-card c-blue">
-        <div class="tk-tag" data-i18n="nh3_tag">Manajemen Litter</div>
-        <div class="tk-title" data-i18n="nh3_title">Manure Belt Dryer vs Akumulasi Gas Amonia</div>
+        <div class="tk-tag" data-i18n="nh3_tag">Litter Management</div>
+        <div class="tk-title" data-i18n="nh3_title">Manure Belt Dryers vs Ammonia Gas Buildup</div>
         <div class="tk-body" data-i18n="nh3_body">
-          Kandang Closed House menggunakan sabuk kotoran polipropilen yang dikeringkan udara secara berkala (kadar amonia stabil di 5,5–9,2 ppm). Pada Open House dengan sistem kolong terbuka, tumpukan feses basah menghasilkan gas amonia hingga 29,5 ppm, merusak silia saluran pernapasan atas dan meningkatkan kerentanan flok terhadap infeksi Coryza dan CRD.
+          Closed House units run polypropylene manure belts with active air drying, keeping ammonia at 5.5–9.2 ppm. In Open House sheds with open droppings pits, wet manure produces up to 29.5 ppm ammonia, damaging respiratory cilia and elevating flock vulnerability to respiratory infections.
         </div>
       </div>
       <div class="tk-card c-green">
-        <div class="tk-tag" data-i18n="water_tag">Keseimbangan Hidrasi</div>
-        <div class="tk-title" data-i18n="water_title">Rasio Konsumsi Air saat Stres Suhu Tropis</div>
+        <div class="tk-tag" data-i18n="water_tag">Hydration Balance</div>
+        <div class="tk-title" data-i18n="water_title">Water-to-Feed Ratio Under Tropical Heat Stress</div>
         <div class="tk-body" data-i18n="water_body">
-          Pada Closed House dengan mikroklimat terkontrol, rasio konsumsi air terhadap pakan berada di kisaran normal 1,85 ml/gram pakan. Pada Open House saat suhu siang hari melampaui 32°C, konsumsi minum melonjak hingga 3,2 ml/gram pakan sebagai kompensasi evaporatif, memicu feses encer (<i>wet droppings</i>) yang mengotori kerabang telur.
+          In climate-controlled Closed houses, water-to-feed intake stays balanced at ~1.85 ml per gram of feed. In Open houses where midday temperatures exceed 32°C, water intake spikes to 3.2 ml/gram as evaporative cooling compensation, producing watery droppings that soil eggshells.
         </div>
       </div>
     </div>
   </div>
 
-  <!-- TAB 3: FINANSIAL & TITIK IMPAS (BEP) -->
+  <!-- TAB 3: FINANCIALS & BREAK-EVEN (BEP) -->
   <div class="tab-pane" id="pane-3">
     <div class="chart-box">
       <div class="chart-hdr">
         <div>
-          <div class="chart-title" data-i18n="c5_title">Sensitivitas Margin Kotor terhadap Fluktuasi Harga Telur</div>
-          <div class="chart-sub" id="c5-sub">Titik impas operasional (BEP) telur: Closed House Rp 22.550/kg vs Open House Rp 25.470/kg</div>
+          <div class="chart-title" data-i18n="c5_title">Gross Margin Sensitivity to Egg Price Fluctuations</div>
+          <div class="chart-sub" id="c5-sub">Egg operational break-even (BEP): Closed IDR 22,550/kg vs Open IDR 25,470/kg</div>
         </div>
       </div>
       <div class="svg-wrap">
@@ -775,25 +779,25 @@ footer a:hover {
     <div class="chart-box">
       <div class="chart-hdr">
         <div>
-          <div class="chart-title" data-i18n="tbl2_title">Matriks Kinerja Finansial &amp; Produksi Flok Terfilter</div>
-          <div class="chart-sub" data-i18n="tbl2_sub">Rincian pendapatan telur, belanja ransum, hasil jual ayam afkir, dan laba bersih per kandang</div>
+          <div class="chart-title" data-i18n="tbl2_title">Financial &amp; Production Matrix: Filtered Flocks</div>
+          <div class="chart-sub" data-i18n="tbl2_sub">Detailed breakdown of egg revenues, feed expenditures, spent hen salvage, and net margins</div>
         </div>
       </div>
       <div class="tbl-wrap">
         <table class="data-table" id="flock-matrix-table">
           <thead>
             <tr>
-              <th data-i18n="th_flockid">ID Flok</th>
-              <th data-i18n="th_house">Nama Kandang</th>
-              <th data-i18n="th_type">Tipe</th>
+              <th data-i18n="th_flockid">Flock ID</th>
+              <th data-i18n="th_house">House Facility</th>
+              <th data-i18n="th_type">Type</th>
               <th data-i18n="th_strain">Strain</th>
-              <th data-i18n="th_pullets">Pullet Housed</th>
-              <th data-i18n="th_mort">Mortalitas</th>
-              <th data-i18n="th_hhp">HHP (Butir)</th>
+              <th data-i18n="th_pullets">Housed Pullets</th>
+              <th data-i18n="th_mort">Mortality</th>
+              <th data-i18n="th_hhp">HHP (Eggs)</th>
               <th data-i18n="th_peakhdp">Peak HDP</th>
-              <th data-i18n="th_fcr">FCR Telur</th>
+              <th data-i18n="th_fcr">Egg FCR</th>
               <th data-i18n="th_rej">Reject Rate</th>
-              <th data-i18n="th_profit">Laba Bersih</th>
+              <th data-i18n="th_profit">Net Profit</th>
               <th data-i18n="th_margin">Margin/kg</th>
             </tr>
           </thead>
@@ -807,22 +811,22 @@ footer a:hover {
 
   <!-- PROFESSIONAL AGRIBUSINESS FOOTER -->
   <footer>
-    <div style="margin-bottom:6px;">
-      <b>Commercial Layer Operations &amp; Intelligence</b> &bull; Siklus Pemeliharaan 60 Minggu (420 Hari) &bull; Sentra Blitar, Kendal &amp; Payakumbuh
+    <div style="margin-bottom:6px;" data-i18n="footer_row1">
+      <b>Commercial Layer Operations &amp; Intelligence</b> &bull; 60-Week Production Lifecycle (420 Days) &bull; Blitar, Kendal &amp; Payakumbuh Hubs
     </div>
-    <div style="font-size:11px; color:var(--t3); line-height:1.5;">
-      Closed: dibangun 2020–2022 (battery 3–4 tier); Open: dibangun 2017–2018 (battery 2 tier). Selisih juga mencerminkan usia dan desain kandang.<br>
-      Dataset simulasi berbasis kalibrasi kurva genetika komersial Brown-class, untuk demonstrasi analitik.<br>
-      Kurasi oleh <a href="https://www.linkedin.com/in/ramawijaya1" target="_blank" rel="noopener noreferrer">Rama Wijaya</a> &bull; Star Schema 6-Sheet Workbook &bull; Telemetri IoT Kandang Tropis
+    <div style="font-size:11px; color:var(--t3); line-height:1.5;" data-i18n="footer_row2">
+      Closed: built 2020–2022 (3–4 tier battery); Open: built 2017–2018 (2 tier). Gaps also reflect house age and design.<br>
+      Simulated dataset built on commercial Brown-class breed guidelines, for analytical demonstration.<br>
+      Curated by <a href="https://www.linkedin.com/in/ramawijaya1" target="_blank" rel="noopener noreferrer">Rama Wijaya</a> &bull; Star Schema 6-Sheet Workbook &bull; Tropical IoT Telemetry
     </div>
   </footer>
 
 </main>
 
 <!-- FLOATING LINKEDIN WATERMARK PILL -->
-<a class="wm" id="wm" href="https://www.linkedin.com/in/ramawijaya1" target="_blank" rel="noopener noreferrer" data-tip="Buka Profil LinkedIn Rama Wijaya">
+<a class="wm" id="wm" href="https://www.linkedin.com/in/ramawijaya1" target="_blank" rel="noopener noreferrer" data-tip="Open Rama Wijaya's LinkedIn Profile">
   <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.4 20.5h-3.6v-5.6c0-1.3 0-3-1.8-3s-2.1 1.4-2.1 2.9v5.7H9.4V9h3.4v1.6c.5-.9 1.6-1.8 3.4-1.8 3.6 0 4.3 2.4 4.3 5.5v6.2zM5.3 7.4a2.1 2.1 0 1 1 0-4.2 2.1 2.1 0 0 1 0 4.2zM7.1 20.5H3.6V9h3.5v11.5z"/></svg>
-  <span id="wm-text">Dibuat oleh <b>Rama Wijaya</b></span>
+  <span id="wm-text">Created by <b>Rama Wijaya</b></span>
 </a>
 
 <div id="tip" hidden></div>
@@ -915,7 +919,9 @@ const I18N = {
     th_fcr: "FCR Telur",
     th_rej: "Reject Rate",
     th_profit: "Laba Bersih",
-    th_margin: "Margin/kg"
+    th_margin: "Margin/kg",
+    footer_row1: "<b>Operasional &amp; Intelijen Layer Komersial</b> &bull; Siklus Pemeliharaan 60 Minggu (420 Hari) &bull; Sentra Blitar, Kendal &amp; Payakumbuh",
+    footer_row2: "Closed: dibangun 2020–2022 (battery 3–4 tier); Open: dibangun 2017–2018 (battery 2 tier). Selisih juga mencerminkan usia dan desain kandang.<br>Dataset simulasi berbasis kalibrasi kurva genetika komersial Brown-class, untuk demonstrasi analitik.<br>Kurasi oleh <a href='https://www.linkedin.com/in/ramawijaya1' target='_blank' rel='noopener noreferrer'>Rama Wijaya</a> &bull; Star Schema 6-Sheet Workbook &bull; Telemetri IoT Kandang Tropis"
   },
   en: {
     filter_housing: "Housing",
@@ -942,9 +948,9 @@ const I18N = {
     tbl1_title: "Closed vs Open House: 7 metrics over 60 weeks",
     tbl1_sub: "Weighted averages per house type, reflecting active filters.",
     th_metric: "Evaluation Metric",
-    th_ch: "Closed House",
-    th_oh: "Open House",
-    th_delta: "Delta",
+    th_ch: "Filtered Closed House",
+    th_oh: "Filtered Open House",
+    th_delta: "Relative Delta",
     th_impact: "Operational Impact",
     row1_name: "Peak HDP (daily)",
     row1_imp: "Breed target met in Closed; Open curtailed by heat stress",
@@ -999,11 +1005,13 @@ const I18N = {
     th_fcr: "Egg FCR",
     th_rej: "Reject Rate",
     th_profit: "Net Profit",
-    th_margin: "Margin/kg"
+    th_margin: "Margin/kg",
+    footer_row1: "<b>Commercial Layer Operations &amp; Intelligence</b> &bull; 60-Week Production Lifecycle (420 Days) &bull; Blitar, Kendal &amp; Payakumbuh Hubs",
+    footer_row2: "Closed: built 2020–2022 (3–4 tier battery); Open: built 2017–2018 (2 tier). Gaps also reflect house age and design.<br>Simulated dataset built on commercial Brown-class breed guidelines, for analytical demonstration.<br>Curated by <a href='https://www.linkedin.com/in/ramawijaya1' target='_blank' rel='noopener noreferrer'>Rama Wijaya</a> &bull; Star Schema 6-Sheet Workbook &bull; Tropical IoT Telemetry"
   }
 };
 
-let currentLang = "id";
+let currentLang = "en";
 let currentTheme = "light";
 let currentFilters = {
   housing: "ALL",
@@ -1013,19 +1021,15 @@ let currentFilters = {
 
 // INITIALIZATION
 window.addEventListener("DOMContentLoaded", () => {
-  if (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) {
-    setTheme("dark");
-  } else {
-    setTheme("light");
-  }
+  setTheme("light");
   applyTranslations();
   computeMetricsAndRender();
 });
 
 function toggleLanguage() {
-  currentLang = currentLang === "id" ? "en" : "id";
-  document.getElementById("lang-flag").innerText = currentLang === "id" ? "EN" : "ID";
-  document.getElementById("lang-label").innerText = currentLang === "id" ? "English" : "Bahasa";
+  currentLang = currentLang === "en" ? "id" : "en";
+  document.getElementById("lang-flag").innerText = currentLang === "en" ? "ID" : "EN";
+  document.getElementById("lang-label").innerText = currentLang === "en" ? "Bahasa" : "English";
   applyTranslations();
   computeMetricsAndRender();
 }
@@ -1039,6 +1043,10 @@ function applyTranslations() {
     }
   });
   const isEn = currentLang === "en";
+  document.documentElement.lang = currentLang;
+  document.title = isEn 
+    ? "Layer Poultry Story: Closed vs Open House, 60 Weeks of Production" 
+    : "Layer Poultry Story: Closed vs Open House, 60 Minggu Produksi";
   document.getElementById("tab-0").innerText = isEn ? "Executive Summary" : "Ringkasan Eksekutif";
   document.getElementById("tab-1").innerText = isEn ? "HDP Curve & Persistency" : "Kurva HDP & Persistensi";
   document.getElementById("tab-2").innerText = isEn ? "Microclimate & Shell Quality" : "Mikroklimat & Kualitas Kerabang";
@@ -1048,6 +1056,10 @@ function applyTranslations() {
   if (wmText) wmText.innerHTML = isEn ? "Created by <b>Rama Wijaya</b>" : "Dibuat oleh <b>Rama Wijaya</b>";
   const wmEl = document.getElementById("wm");
   if (wmEl) wmEl.setAttribute("data-tip", isEn ? "Open Rama Wijaya's LinkedIn Profile" : "Buka Profil LinkedIn Rama Wijaya");
+
+  document.querySelectorAll(".fl-all-btn").forEach(btn => {
+    btn.innerText = isEn ? "All" : "Semua";
+  });
 
   const lgC = document.getElementById("lg-c-text");
   if (lgC) lgC.innerText = dict.lg_ch;
@@ -1098,7 +1110,7 @@ function setFilter(type, val) {
   currentFilters[type] = val;
   const container = document.getElementById("fl-" + (type === "housing" ? "housing" : type === "region" ? "region" : "strain"));
   container.querySelectorAll("button").forEach(b => {
-    const act = (val === "ALL" && b.innerText === "Semua") || b.innerText.includes(val) || b.getAttribute("onclick").includes("'" + val + "'");
+    const act = (val === "ALL" && (b.innerText === "All" || b.innerText === "Semua" || b.classList.contains("fl-all-btn"))) || b.innerText.includes(val) || b.getAttribute("onclick").includes("'" + val + "'");
     b.setAttribute("data-act", act ? "1" : "0");
   });
   computeMetricsAndRender();
@@ -1107,10 +1119,18 @@ function setFilter(type, val) {
 function resetFilters() {
   currentFilters = { housing: "ALL", region: "ALL", strain: "ALL" };
   document.querySelectorAll(".fl button").forEach(b => {
-    b.setAttribute("data-act", b.innerText === "Semua" ? "1" : "0");
+    const isAll = b.innerText === "Semua" || b.innerText === "All" || b.classList.contains("fl-all-btn") || b.getAttribute("onclick").includes("'ALL'");
+    b.setAttribute("data-act", isAll ? "1" : "0");
   });
   computeMetricsAndRender();
 }
+
+// EXPORT TO WINDOW SCOPE
+window.switchTab = switchTab;
+window.toggleLanguage = toggleLanguage;
+window.toggleTheme = toggleTheme;
+window.setFilter = setFilter;
+window.resetFilters = resetFilters;
 
 // NUMBER FORMATTING HELPERS (ID: 1.234,5 / EN: 1,234.5)
 function formatNum(val, digits = 1) {
